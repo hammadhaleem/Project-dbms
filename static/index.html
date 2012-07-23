@@ -61,7 +61,12 @@
         <p>This page is based on Twitter Bootstrap's starter template file for a "Basic marketing site," <a href="http://twitter.github.com/bootstrap/examples.html">which is found in their examples</a>.</p>
         <p>These files have been updated to Twitter Bootstrap version 2.02. <a href="https://github.com/twitter/bootstrap/wiki/Changelog">Read more here</a>.</p>
       </div>
+$def with (name)
 
+$if name:
+    I just wanted to say <em>hello</em> to $name.
+$else:
+    <em>Hello</em>, world!
       <div class="row">
         <div class="span4">
           <h2>Setup Notes</h2>
