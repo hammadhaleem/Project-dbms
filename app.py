@@ -3,15 +3,19 @@ import web
 def make_text(string):
     return string
 
-urls = ('/', 'tutorial')
+urls = ('/', 'tutorial',
+	'/index', 'index',
+	'/page1', 'page1',
+	'/page2', 'page2',
+	'/page3', 'page3',)
 render = web.template.render('templates/')
 
 app = web.application(urls, globals())
 
+
 my_form = web.form.Form(
                 web.form.Textbox('', class_='textfield', id='textfield'),
-                )
-
+               		 )
 class tutorial:
     def GET(self):
         form = my_form()
@@ -23,6 +27,24 @@ class tutorial:
         s = form.value['textfield']
         return make_text(s)
 
+
+class index:
+    def GET(self):
+        return 'index page !'
+	
+class page1:
+    def GET(self):
+        return "page one !!"
+
+class page2:
+    def GET(self):
+        return "page two !!"
+
+class page3:
+    def GET(self):
+        return "page three !!"
+
+	
 if __name__ == '__main__':
     app.run()
 
