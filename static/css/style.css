@@ -1,0 +1,125 @@
+/* =======================================
+
+		Main Stylesheet for My-Bootstrap-Site
+		
+		Innovations on Twitter Bootstrap
+		
+========================================== */
+
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+
+/*	Navbar Adjustments
+		============================================= */
+
+		/* Top Padding for responsive navbar-top-fixed */
+				body { /* Add top padding for full-width layout */
+					padding-top: 60px;
+					padding-bottom: 40px;
+				}
+				@media (max-width: 979px) {
+				  body { /* Remove top padding when top navbar goes static */
+				    padding-top: 0;
+				  }
+				}
+
+			/* For static full-width navbar 
+					(If needed) */
+			/* 
+				.navbar-inner {
+					  -webkit-border-radius: 0;
+					  -moz-border-radius: 0;
+					  border-radius: 0;
+				}
+			*/
+
+/* 	Rows and Columns
+		============================================ */
+		.row { /* more top and bottom padding on rows */
+			padding: 20px 0;
+		}
+	
+/* 	Pills and Tabs
+		============================================ */
+		.nav-pills li a h3 {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		.nav-pills li.active a h3 {
+			font-size: 14px;
+			color: white;
+		}
+
+
+/* 	For Code Snippets
+		============================================ */
+		
+		code, pre, pre.prettyprint {
+			background-color: #fee9cc;
+		}
+		pre, pre.prettyprint {
+			padding: 16px 20px;
+			margin: 10px 0;
+			-webkit-border-radius: 6px;	
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+		}
+		
+		.alert pre {
+			text-shadow: none;
+		}
+		
+		/* Pretty printing styles. Used with prettify.js. */
+		
+		/* SPAN elements with the classes below are added by prettyprint. */
+		.pln { color: #000 }  /* plain text */
+		
+		@media screen {
+		  .str { color: #080 }  /* string content */
+		  .kwd { color: #008 }  /* a keyword */
+		  .com { color: #800 }  /* a comment */
+		  .typ { color: #606 }  /* a type name */
+		  .lit { color: #066 }  /* a literal value */
+		  /* punctuation, lisp open bracket, lisp close bracket */
+		  .pun, .opn, .clo { color: #660 }
+		  .tag { color: #008 }  /* a markup tag name */
+		  .atn { color: #606 }  /* a markup attribute name */
+		  .atv { color: #080 }  /* a markup attribute value */
+		  .dec, .var { color: #606 }  /* a declaration; a variable name */
+		  .fun { color: red }  /* a function name */
+		}
+		
+		/* Use higher contrast and text-weight for printable form. */
+		@media print, projection {
+		  .str { color: #060 }
+		  .kwd { color: #006; font-weight: bold }
+		  .com { color: #600; font-style: italic }
+		  .typ { color: #404; font-weight: bold }
+		  .lit { color: #044 }
+		  .pun, .opn, .clo { color: #440 }
+		  .tag { color: #006; font-weight: bold }
+		  .atn { color: #404 }
+		  .atv { color: #060 }
+		}
+
+		pre.prettyprint { /* customized by DC */
+			/* padding: 2px;
+			border: 1px solid #888  */
+			}
+				
+		/* Specify class=linenums on a pre to get line numbering */
+		ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+		li.L0,
+		li.L1,
+		li.L2,
+		li.L3,
+		li.L5,
+		li.L6,
+		li.L7,
+		li.L8 { list-style-type: none }
+		/* Alternate shading for lines */
+		li.L1,
+		li.L3,
+		li.L5,
+		li.L7,
+		li.L9 { background: #eee }

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Navbar Examples</title>
+    
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	  <meta name="viewport" content="width=device-width">
+
+<!-- Main stylesheet imports bootstrap css and adds custom -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+    	/* To keep short panes open decently tall */
+    	.tab-pane {min-height: 500px;}
+    </style>
+
+<!-- Modernizr for browser feature-checking 
+			+ HTML5shiv (included in modernizr) see modernizr.com -->
+  	<script src="js/modernizr-2.5.3.min.js"></script>
+
+<!-- Fav and touch icons -->
+		<!-- alternatively, remove these lines and place icons
+				directly in the site parent folder 
+				mathiasbynens.be/notes/touch-icons -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+		  <div class="navbar-inner">
+		    <div class="container">
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+		      <a class="brand" href="index.html">My Bootstrap Site</a>
+		      <div class="nav-collapse">
+		        <ul class="nav">
+		          <li><a href="index.html"><i class="icon-home icon-white"></i> Home</a></li>
+		          <li><a href="setup-notes.html">Setup Notes</a></li>
+		          <li class="active"><a href="navbar-examples.html">Navbar Examples</a></li>
+		        </ul>
+		        	<a class="btn btn-primary pull-right" href="http://twitter.github.com/bootstrap/">Twitter Bootstrap Home</a>
+		      </div><!-- /.nav-collapse -->
+		    </div><!-- /.container -->
+		  </div><!-- /navbar-inner -->
+		</div><!-- /navbar -->
+		
+		<div class="container">
+    <div class="page-header">
+	    <h1>Navbar Examples</h1>
+    </div>
+    <p class="alert alert-success">PLEASE NOTE: The examples given here depend upon and cannot replace <a href="http://twitter.github.com/bootstrap/components.html#navbar">Twitter Bootstrap's own excellent documentation</a>.</p>
+		
+		<h3>Page contents:</h3>
+		<ul>
+			<li>Navbar-Fixed-Top Markup, CSS, and JS with notes</li>
+			<li>Static Navbar Full-Width, with required CSS adjustments</li>
+			<li>Static Navbar inside Container</li>
+		</ul>
+
+<hr>
+		
+		
+			<h2>Navbar Fixed-Top <small>see example at top of this page</small></h2>
+				<p>The standard navbar that you see above and in Twitter Bootstrap's own examples and documentation.</p>
+
+			<div class="note-tabs">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#navbar-fixed-html" data-toggle="tab"><strong>The Markup</strong></a></li>
+					<li><a href="#navbar-fixed-css" data-toggle="tab"><strong>The CSS</strong></a></li>
+					<li><a href="#navbar-fixed-js" data-toggle="tab"><strong>The JavaScript</strong></a></li>
+				</ul>
+				<div class="tab-content">
+				<div class="tab-pane active" id="navbar-fixed-html">
+					<div class="row">
+					<div class="span3">
+						<h3>Markup</h3>
+						<p>The markup for nearly everything you see above, including:</p>
+						<ol>
+							<li>class <strong>navbar-fixed-top</strong></li>
+							<li>the <strong>btn-navbar</strong> which will be used for the responsive nav. (The span class icon-bars are the three bars you'll see in that button.)</li>
+							<li>the class <strong>nav-collapse</strong> to indicate the contents which will be collapsed in the responsive nav</li>
+							<li><strong>a home icon</strong> used in the Home menu item</li>
+							<li>an example <strong>dropdown menu</strong></li>
+							<li>a sample <strong>search field</strong>, also with pull-right</li>
+						</ol>
+					</div><!-- .span -->
+					<div class="span9">
+						<h4>Navbar-fixed-top with dropdown, search, and responsive-ready</h4>
+						<pre>&lt;div class=&quot;navbar navbar-fixed-top&quot;&gt;
+  &lt;div class=&quot;navbar-inner&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;a class=&quot;btn btn-navbar&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.nav-collapse&quot;&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a class=&quot;brand&quot; href=&quot;#&quot;&gt;Project Name&lt;/a&gt;
+      &lt;div class=&quot;nav-collapse&quot;&gt;
+        &lt;ul class=&quot;nav&quot;&gt;
+          &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;icon-home icon-white&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;dropdown&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;form class=&quot;navbar-search pull-right&quot; action=&quot;&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;search-query span2&quot; placeholder=&quot;Search&quot;&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;&lt;!-- /.nav-collapse --&gt;
+    &lt;/div&gt;&lt;!-- /.container --&gt;
+  &lt;/div&gt;&lt;!-- /.navbar-inner --&gt;
+&lt;/div&gt;&lt;!-- /.navbar --&gt;</pre>
+					</div><!-- .span -->
+					</div><!-- .row -->
+					<div class="row">
+						<div class="span3">
+							<h3>Sample dropdown nav item with more detail</h3>
+							<p>Here's a sample dropdown nav list item with the details such as you see in the main navbar on this page, including:</p>
+							<ul>
+								<li>a divider list item</li>
+								<li>a header</li>
+							</ul>
+						</div><!-- .span -->
+						<div class="span9">
+							<h4>Dropdown nav item with more detail</h4>
+							<pre>&lt;li class=&quot;dropdown&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+  &lt;ul class=&quot;dropdown-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;nav-header&quot;&gt;Nav header&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One more separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;</pre>
+						</div><!-- .span -->
+					</div><!-- .row -->
+					<div class="row">
+						<div class="span3">
+							<h3>Floated right</h3>
+							<p>If you'd like to setup a separate dropdown navigation floated to the right (as you see above), here is how you'd do it.</p>
+						</div><!-- .span -->
+						<div class="span9">
+							<h4>Floated right dropdown</h4>
+							<pre>&lt;ul class=&quot;nav pull-right&quot;&gt;
+  &lt;li class=&quot;dropdown&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Utility &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;
+    &lt;ul class=&quot;dropdown-menu&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+						</div><!-- .span -->
+					</div><!-- .row -->
+		
+				</div><!-- #navbar-fixed-html -->
+				<div class="tab-pane" id="navbar-fixed-css">
+					<div class="row">
+					<div class="span3">
+						<h3>CSS Sequence</h3>
+						<p>This CSS configuration is needed to make the nav work responsively:</p>
+		    	<ol>
+		    		<li>bootstrap.css, followed by ...</li>
+		    		<li>embedded styles for navbar-top-fixed</li>
+		    		<li>followed by bootstrap-responsive.css</li>
+		    	</ol>
+		    <p>This is noted <a href="http://twitter.github.com/bootstrap/components.html#navbar">in Bootstrap 2.0's documentation</a> under "Fixed navbar."</p> 
+		    <p><strong>A possible alternative approach is noted below.</strong></p>
+					
+					</div>
+					<div class="span9">
+						<h4>In the document head</h4>
+						<pre>&lt;!-- Styles --&gt;
+&lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+    body {
+    padding-top: 60px; /* When using the navbar-top-fixed */
+    }
+&lt;/style&gt;
+&lt;link href=&quot;css/bootstrap-responsive.css&quot; rel=&quot;stylesheet&quot;&gt;</pre>
+				</div><!-- .span -->
+			</div><!-- .row -->
+<hr>
+			<div class="row">
+				<div class="span3">
+					<h3>Alternate CSS Option</h3>
+					<p>If your workflow includes inlining and minifying your CSS before publication, you might choose to use CSS imports to pull <strong>bootstrap.css</strong> and <strong>bootstrap-responsive.css</strong> into a single stylesheet, then add your own custom styles.</p>
+				</div><!-- .span -->
+				<div class="span9">
+					<h4>In the Markup</h4>
+      	<p>Link to a single parent CSS file.</p>
+				<pre>&lt;!-- Main stylesheet imports bootstrap css and adds custom --&gt;
+&lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;</pre>
+				
+				<h4>Main Stylesheet</h4>
+				<p>Import bootstrap stylesheets, and then adjust for the navbar-top-fixed, if needed.</p>
+				<pre>/* Main Stylesheet */
+/* Import Bootstrap styles and Responsive styles */
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+
+/* Add top padding for navbar-top-fixed */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  }
+/* Remove top padding when top navbar goes static in narrow viewports */
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}</pre>
+						</div><!-- .span -->
+					</div><!-- .row -->
+				</div><!-- /#navbar-fixed-css -->
+				<div id="navbar-fixed-js" class="tab-pane">
+					<div class="row">
+						<div class="span3">
+							<h3>JavaScript</h3>
+							<p>Required for the dropdowns and responsive nav.</p>
+							<p>Bootstrap's jQuery plugins are rigged to work so long as the right classes and data attributes are provided -- as in the markup above.</p>
+						</div><!-- .span -->
+						<div class="span9">
+							<h4>Supply jQuery and Bootstrap's JS <small>(Nothing else required.)</small></h4>
+							<p>Add the following, preferably at the bottom of the document just before the closing body tag. (Or in the document head if necessary.)</p>
+							<pre>&lt;!-- jQuery via Google + local fallback, see h5bp.com --&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery || document.write('&lt;script src=&quot;js/jquery-1.7.1.min.js&quot;&gt;&lt;\/script&gt;')&lt;/script&gt;
+
+&lt;!-- Bootstrap jQuery Plugins, compiled and minified --&gt;
+&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</pre>
+<p>Alternatively, use only the <strong>bootstrap-dropdown.js</strong> and <strong>bootstrap-collapse.js</strong> plugins, if those are all you need.</p>
+
+						
+						</div><!-- .span -->
+					</div><!-- .row -->		
+				</div><!-- #navbar-fixed.js -->
+				</div><!-- .tab-content -->
+			</div><!-- /.note-tabs -->
+			</div><!-- .container -->
+
+<hr>
+		<div class="container">
+			<h2>Static Navbar Full-Width <small>stays static positioned where you put it in the page</small></h2>
+		</div><!-- /.container -->
+      <div class="navbar">
+		  <div class="navbar-inner" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
+		    <div class="container">
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+		      <a class="brand" href="#">Project Name</a>
+		      <div class="nav-collapse">
+		        <ul class="nav">
+		          <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		              <li><a href="#">Action</a></li>
+		              <li><a href="#">Another action</a></li>
+		              <li><a href="#">Something else here</a></li>
+		              <li class="divider"></li>
+		              <li class="nav-header">Nav header</li>
+		              <li><a href="#">Separated link</a></li>
+		              <li><a href="#">One more separated link</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+				    <form class="navbar-search pull-right" action="">
+		          <input type="text" class="search-query span2" placeholder="Search">
+		        </form>
+		        <ul class="nav pull-right">
+		        	<li class="dropdown">
+		        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Utility <b class="caret"></b></a>
+		        		<ul class="dropdown-menu">
+		        			<li><a href="#">Item 1</a></li>
+		        			<li><a href="#">Item 2</a></li>
+		        			<li><a href="#">Item 3</a></li>
+		        		</ul>
+		        	</li>
+		        </ul>
+		      </div><!-- /.nav-collapse -->
+		    </div><!-- /.container -->
+		  </div><!-- /navbar-inner -->
+		</div><!-- /navbar -->
+
+		<div class="container">
+			<div class="row">
+					<div class="span3">
+						<h3>Notes & Code</h3>
+						<p>To make a navbar that's positioned static within a page, yet still full-width:</p>
+						<ol>
+							<li>Remove class "navbar-fixed-top" from div class "navbar".</li>
+							<li>Customize the styles on div class "navbar-inner" to remove rounded corners</li>
+							<li>It depends ...
+								<ul>
+									<li><strong>If you're using Bootstrap 2.02 --></strong> you'll need to modify a line in bootstrap.css. (See code example.)</li>
+									<li><strong>If you're using Bootstrap 2.0 or 2.01 --></strong> you should be good to go!</li>
+								</ul>
+							</li>
+						</ol>
+						
+					</div><!-- /.span -->
+					<div class="span9">
+						<h4>HTML</h4>
+						<p>No fixed-top positioning and remove the rounded corners:</p>
+						<pre>&lt;div class=&quot;navbar&quot;&gt;
+  &lt;div class=&quot;navbar-inner&quot; style=&quot;-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;!-- ... and so on ... --&gt;</pre>
+        <h4>Custom stylesheet?</h4>
+						<p>Of course those inline styles on navbar-inner are ugly, and so you may prefer to add the following to your custom stylesheet:</p>
+								<pre class="lang-css">.navbar-inner {	
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}</pre>
+							<div class="alert alert-info">
+								<h4>Using version 2.02?</h4>
+								<p>You'll need to modify one line in the CSS: 
+								<p><code>bootstrap.css</code> line 2801</p>
+								<p>Currently reads:</p>
+								<pre>.navbar .container {
+  width: auto;
+}</pre>
+								<p>Change the selector so that it reads as follows:</p>
+								<pre><strong>.container</strong> .navbar .container {
+  width: auto;
+}</pre>
+							</div><!-- .alert -->
+						</div><!-- .span -->
+				</div><!-- /.row -->
+		</div><!-- /.container -->
+
+<hr>
+    <div class="container">
+		<h2>Static Navbar Inside Container <small>constrained to the width of your site contents</small></h2>
+      <div class="navbar">
+		  <div class="navbar-inner">
+		    <div class="container" style="width: auto">
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </a>
+		      <a class="brand" href="#">Project Name</a>
+		      <div class="nav-collapse">
+		        <ul class="nav">
+		          <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li><a href="#">Link</a></li>
+		          <li class="dropdown">
+		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		            <ul class="dropdown-menu">
+		              <li><a href="#">Action</a></li>
+		              <li><a href="#">Another action</a></li>
+		              <li><a href="#">Something else here</a></li>
+		              <li class="divider"></li>
+		              <li class="nav-header">Nav header</li>
+		              <li><a href="#">Separated link</a></li>
+		              <li><a href="#">One more separated link</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+				    <form class="navbar-search pull-right" action="">
+		          <input type="text" class="search-query span2" placeholder="Search">
+		        </form>
+		        <ul class="nav pull-right">
+		        	<li class="dropdown">
+		        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Utility <b class="caret"></b></a>
+		        		<ul class="dropdown-menu">
+		        			<li><a href="#">Item 1</a></li>
+		        			<li><a href="#">Item 2</a></li>
+		        			<li><a href="#">Item 3</a></li>
+		        		</ul>
+		        	</li>
+		        </ul>
+		      </div><!-- /.nav-collapse -->
+		    </div><!-- /.container -->
+		  </div><!-- /navbar-inner -->
+		</div><!-- /navbar -->
+
+		<div class="row">
+			<div class="span3">
+				<h3>Notes</h3>
+				<p>For this application:</p>
+				<ol>
+					<li>Nest the entire nav within a div class "container".</li>
+					<li>Remove class "navbar-fixed-top" from div class "navbar".</li>
+					<li>The third step depends ...
+						<ul>
+							<li><strong>If you are using Bootstrap 2.02 --></strong> That's it. You're set!</li>
+							<li><strong>If you are using Bootstrap 2.0 or 2.01 --></strong> Add style="width:auto" to the div class "container" within the navbar. (<strong>Without it, pull-right elements bleed over the right edge.</strong>)</li>
+						</ul>
+					</li>
+				</ol>
+			</div><!-- /.span -->
+			<div class="span9">
+				<h4>HTML</h4>
+				<p>The following is sufficient for <strong>Bootstrap 2.02</strong>:</p>
+				<pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;navbar&quot;&gt;
+    &lt;div class=&quot;navbar-inner&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;!-- ... and so on ... --&gt;</pre>
+				
+				<div class="alert alert-info">
+				<h4>Using Bootstrap 2.0 or 2.01?</h4>
+				<p>You'll need to add "width: auto" to the internal div class "container", like so:</p>
+				<pre>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;navbar&quot;&gt;
+    &lt;div class=&quot;navbar-inner&quot;&gt;
+      &lt;div class=&quot;container&quot; style=&quot;width: auto&quot;&gt;
+        &lt;!-- ... and so on ... --&gt;</pre>
+        <h4>Custom stylesheet?</h4>
+				<p>Alternatively, you may remove the inline style and add the following to a custom stylesheet:</p>
+				<pre>.container .navbar .container { 
+  width: auto;
+}</pre>
+				</div><!-- .alert -->
+			</div><!-- /.span -->
+		</div><!-- /.row -->
+
+
+      <hr>
+
+      <footer>
+        <p>By David Cochran of <a href="http://okwu.edu">Oklahoma Wesleyan University</a> and <a href="http://alittlecode.com/">aLittleCode.com</a> for <a href="http://webdesign.tutsplus.com/">webdesign.tutsplus.com</a>. Free for your use! (No warranties, no guarantees.)</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+<!-- ==============================================
+		 JavaScript below! 															-->
+
+<!-- jQuery via Google + local fallback, see h5bp.com -->
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+
+<!-- Bootstrap JS: compiled and minified -->
+    <script src="js/bootstrap.min.js"></script>
+
+<!-- Example plugin: Prettify -->
+    <script src="js/prettify/prettify.js"></script>
+    
+<!-- Initialize Scripts -->
+		<script>
+			// Activate Google Prettify in this page
+			addEventListener('load', prettyPrint, false);
+		
+			$(document).ready(function(){
+
+				// Add prettyprint class to pre elements
+					$('pre').addClass('prettyprint');
+
+				// Initialize tabs and pills
+					$('.note-tabs').tab();
+								
+			}); // end document.ready
+		</script>
+
+  </body>
+</html>
