@@ -1,16 +1,28 @@
 import web
 
+def make_text(string):
+    return string
+
+urls = ('/', 'tutorial')
 render = web.template.render('templates/')
 
-urls = (
-    '/(.*)', 'index'
-)
+app = web.application(urls, globals())
 
-class index:
-   def GET(self, name):
-  	 return render.index(name)
-	
+my_form = web.form.Form(
+                web.form.Textbox('', class_='textfield', id='textfield'),
+                )
 
-if __name__ == "__main__":
-    app = web.application(urls, globals())
+class tutorial:
+    def GET(self):
+        form = my_form()
+        return render.tutorial(form, "Your text goes here.")
+        
+    def POST(self):
+        form = my_form()
+        form.validates()
+        s = form.value['textfield']
+        return make_text(s)
+
+if __name__ == '__main__':
     app.run()
+
