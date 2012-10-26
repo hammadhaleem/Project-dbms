@@ -1,0 +1,1 @@
+	<form ><strong><h2>Search</h2></strong><input type="text" name="search" size=50></form>
