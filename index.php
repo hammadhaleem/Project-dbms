@@ -1,5 +1,4 @@
 <?php
-
 	include_once "config/config.php" ; 
 	require "sections/header.php";
     	require "sections/nav.php";
